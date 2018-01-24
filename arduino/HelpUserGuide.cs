@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace arduino
@@ -16,12 +9,8 @@ namespace arduino
         public HelpUserGuide()
         {
             InitializeComponent();
-            //try
-            //{
-                string html = File.ReadAllText("Instructiuni.html");
-                wbInstructiuni.DocumentText = html;
-            //}
-            //catch (Exception ex) { }
+            String curDir = Directory.GetCurrentDirectory(); 
+            wbInstructiuni.Url = new Uri(String.Format("file:///{0}/UserGuide.html", curDir));
         }
     }
 }
