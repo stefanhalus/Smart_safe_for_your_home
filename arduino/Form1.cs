@@ -129,25 +129,6 @@ namespace arduino
         {
             mStr = spArduino.ReadLine();
         }
-
-        //SUSPENDAT TEMPORAR CU INTENȚIA DE ABANDONARE
-        // Metodă inițială atribuită unui buton de verificare a funcționalității seriale
-        //private void btnCheck_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        spArduino.WriteLine(tname.Text);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(
-        //            "Butonul nu poate fi folosit dacă nu este conectat placa \n" + ex.Message,
-        //            "Arduino neconectat",
-        //            MessageBoxButtons.OK,
-        //            MessageBoxIcon.Warning
-        //            );
-        //    }
-        //}
         
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
