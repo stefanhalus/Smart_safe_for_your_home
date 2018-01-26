@@ -10,7 +10,15 @@ namespace arduino
 
         }
 
-        public static String SerialJoin(List<DataUser> vars)
+        public static String SerialJoinProfiles(String scope, List<DataProfile> vars)
+        {
+            String ret = "*";
+            foreach (var item in vars)
+                ret += item.Id + "," + item.Name + "," + item.Delay + "," + item.HourStart + "," + item.HourEnd + "|";
+            return ret + "#";
+        }
+
+        public static String SerialJoinUsers(String scope, List<DataUser> vars)
         {
             String ret = "*";
             foreach (var item in vars)

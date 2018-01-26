@@ -97,8 +97,12 @@ namespace arduino
                 }
             } /// endif ID != 0
             else
-                MessageBox.Show("Numele profilului trebuie să aibă cel puțin 2 caractere!", "Nume prea scurt", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            // METODĂ DE CURĂȚARE
+                MessageBox.Show(
+                    "Numele profilului trebuie să aibă cel puțin 2 caractere!", 
+                    "Nume prea scurt", 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Warning
+                    );
         }
 
         public void InsertUsers(List<DataUser> list)
@@ -185,8 +189,12 @@ namespace arduino
                 }
             } /// endif ID != 0
             else
-                MessageBox.Show("Câmpurile sunt goale! \nSelectați un rând dând click pe coloana dinaintea cifrei!", "Nu ați selectat vreun rând", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            
+                MessageBox.Show(
+                    "Câmpurile sunt goale! \nSelectați un rând dând click pe coloana dinaintea cifrei!", 
+                    "Nu ați selectat vreun rând", 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Warning
+                    );
         }
 
         public void UpdateUsers(List<DataUser> list)
@@ -233,8 +241,6 @@ namespace arduino
                     CloseConnection();
                 }
             } /// endif ID != 0
-            else
-                Console.Write("Câmpurile sunt goale! \nSelectați un rând dând click pe coloana dinaintea cifrei!");
         }
 
         public void DeleteProfiles(int id = 0)
@@ -269,7 +275,12 @@ namespace arduino
                 }
             } /// endif ID != 0
             else
-                MessageBox.Show("Câmpurile sunt goale! \nSelectați un rând dând click pe coloana dinaintea cifrei!", "Nu ați selectat vreun rând", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(
+                    "Câmpurile sunt goale! \nSelectați un rând dând click pe coloana dinaintea cifrei!", 
+                    "Nu ați selectat vreun rând", 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Warning
+                    );
         }
 
         public void DeleteUsers(int id = 0)
@@ -301,7 +312,27 @@ namespace arduino
                 }
             } /// endif ID != 0
             else
-                Console.Write("Câmpurile sunt goale! \nSelectați un rând dând click pe coloana dinaintea cifrei!");
+                Console.Write(
+                    "Fields are empty! \nSelect a row by clicking on the very left column of the row!",
+                    "Empty fields",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                    );
+        }
+
+        public String SyncProfiles()
+        {
+            string selectQuery = "select * from profiles";
+            DataProfile dataUser = new DataProfile();
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, connection);
+            adapter.Fill(table);
+            List<DataProfile> profilesTable = new List<DataProfile>();
+            foreach (DataRow row in table.Rows)
+            {
+                profilesTable.Add(new DataProfile() { Id = Convert.ToInt16(row["id"]), Name = row["name"].ToString(), Delay = Convert.ToInt16(row["delay"]), HourStart = row["start"].ToString(), HourEnd = row["end"].ToString() });
+            }
+            return ArduSerial.SerialJoinProfiles("profiles", profilesTable);
         }
 
         public String SyncUsers()
@@ -316,11 +347,9 @@ namespace arduino
             {
                 usersTable.Add(new DataUser() { Id = Convert.ToInt16(row["id"]), Name = row["name"].ToString(), Pass = row["pass"].ToString(), Phone = row["phone"].ToString() });
             }
-            return ArduSerial.SerialJoin(usersTable);
-            //Console.Write(ArduSerial.SerialJoin(usersTable));
+            return ArduSerial.SerialJoinUsers("users", usersTable);
         }
-
-
+        
         public DataTable PopulateDGVUsers()
         {
             string selectQuery = "select * from arduino_db ";
@@ -338,7 +367,6 @@ namespace arduino
             adapter.Fill(table);
             return table;
         }
-
-
+        
     }
 }

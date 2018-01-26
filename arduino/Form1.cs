@@ -28,7 +28,9 @@ namespace arduino
             }
             catch (Exception ex)
             {
-                btnSync.Enabled = false;
+                syncProfilesToolStripMenuItem.Enabled = false;
+                syncSMSNumberToolStripMenuItem.Enabled = false;
+                syncUsersToolStripMenuItem.Enabled = false;
                 MessageBox.Show(
                     ex.Message.ToString(), 
                     "Placa Arduino", 
@@ -146,25 +148,7 @@ namespace arduino
         //            );
         //    }
         //}
-
-        //Butonul realizează sincronizarea datelor, trimițând lista utilizatorilor în Arduino
-        private void btnSync_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                spArduino.WriteLine(db.SyncUsers());
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    "Nu se poate sincroniza \nMotiv: " + ex.Message,
-                    "Arduino neconectat",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                    );
-            }
-        }
-
+        
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -180,6 +164,81 @@ namespace arduino
         {
             HelpUserGuide userGuide = new HelpUserGuide();
             userGuide.Show();
+        }
+
+        private void setSMSDestinationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SmsDestination sms = new SmsDestination();
+            sms.Show();
+        }
+
+        private void syncSMSNumberToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                spArduino.WriteLine("*smsNumber," + Properties.Settings.Default.smartSmsNumber + "|#");
+                MessageBox.Show(
+                    "Success! \nNew number set to Arduino!",
+                    "Arduino syncronized",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                    );
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Failed! Syncronization error! \nReason: " + ex.Message,
+                    "Arduino not syncronized",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                    );
+            }
+        }
+
+        private void syncUsersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                spArduino.WriteLine(db.SyncUsers());
+                MessageBox.Show(
+                    "Success! \nUsers were stored to Arduino!",
+                    "Arduino syncronized",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                    );
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Failed! Syncronization error! \nReason: " + ex.Message,
+                    "Arduino not syncronized",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                    );
+            }
+        }
+
+        private void syncProfilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                spArduino.WriteLine(db.SyncProfiles());
+                MessageBox.Show(
+                    "Success! \nProfiles were stored to Arduino!",
+                    "Arduino syncronized",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                    );
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Failed! Syncronization error! \nReason: " + ex.Message,
+                    "Arduino not syncronized",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                    );
+            }
         }
     }
 }

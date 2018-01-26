@@ -22,5 +22,17 @@ namespace arduino.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string smartSmsNumber {
+            get {
+                return ((string)(this["smartSmsNumber"]));
+            }
+            set {
+                this["smartSmsNumber"] = value;
+            }
+        }
     }
 }
