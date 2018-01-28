@@ -28,7 +28,6 @@ namespace arduino
             }
             catch (Exception ex)
             {
-                syncProfilesToolStripMenuItem.Enabled = false;
                 syncSMSNumberToolStripMenuItem.Enabled = false;
                 syncUsersToolStripMenuItem.Enabled = false;
                 MessageBox.Show(

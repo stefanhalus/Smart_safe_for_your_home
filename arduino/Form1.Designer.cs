@@ -52,12 +52,10 @@
             this.tarm = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.setProfilesMain = new System.Windows.Forms.ToolStripMenuItem();
             this.setSMSDestinationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.syncronizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.syncSMSNumberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.syncUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.syncProfilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userGuideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -312,7 +310,6 @@
             this.menuStrip1.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.setProfilesMain,
             this.setSMSDestinationToolStripMenuItem,
             this.syncronizeToolStripMenuItem,
             this.helpToolStripMenuItem,
@@ -324,16 +321,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(970, 33);
             this.menuStrip1.TabIndex = 20;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // setProfilesMain
-            // 
-            this.setProfilesMain.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.setProfilesMain.ForeColor = System.Drawing.Color.Red;
-            this.setProfilesMain.Name = "setProfilesMain";
-            this.setProfilesMain.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.setProfilesMain.Size = new System.Drawing.Size(112, 29);
-            this.setProfilesMain.Text = "Set Profiles";
-            this.setProfilesMain.Click += new System.EventHandler(this.setProfilesMain_Click);
             // 
             // setSMSDestinationToolStripMenuItem
             // 
@@ -347,8 +334,7 @@
             // 
             this.syncronizeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.syncSMSNumberToolStripMenuItem,
-            this.syncUsersToolStripMenuItem,
-            this.syncProfilesToolStripMenuItem});
+            this.syncUsersToolStripMenuItem});
             this.syncronizeToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
             this.syncronizeToolStripMenuItem.Name = "syncronizeToolStripMenuItem";
             this.syncronizeToolStripMenuItem.Size = new System.Drawing.Size(108, 29);
@@ -369,14 +355,6 @@
             this.syncUsersToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
             this.syncUsersToolStripMenuItem.Text = "Users";
             this.syncUsersToolStripMenuItem.Click += new System.EventHandler(this.syncUsersToolStripMenuItem_Click);
-            // 
-            // syncProfilesToolStripMenuItem
-            // 
-            this.syncProfilesToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
-            this.syncProfilesToolStripMenuItem.Name = "syncProfilesToolStripMenuItem";
-            this.syncProfilesToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
-            this.syncProfilesToolStripMenuItem.Text = "Profiles";
-            this.syncProfilesToolStripMenuItem.Click += new System.EventHandler(this.syncProfilesToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -484,7 +462,6 @@
 		private System.Windows.Forms.TextBox tarm;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.MenuStrip menuStrip1;
-		private System.Windows.Forms.ToolStripMenuItem setProfilesMain;
         private System.IO.Ports.SerialPort spArduino;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
@@ -496,7 +473,6 @@
         private System.Windows.Forms.ToolStripMenuItem syncronizeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem syncSMSNumberToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem syncUsersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem syncProfilesToolStripMenuItem;
     }
 }
 
