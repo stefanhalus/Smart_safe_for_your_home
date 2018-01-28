@@ -345,7 +345,7 @@ namespace arduino
             List<DataUser> usersTable = new List<DataUser>();
             foreach (DataRow row in table.Rows)
             {
-                usersTable.Add(new DataUser() { Id = Convert.ToInt16(row["id"]), Name = row["name"].ToString(), Pass = row["pass"].ToString(), Phone = row["phone"].ToString() });
+                usersTable.Add(new DataUser() { Id = Convert.ToInt16(row["id"]), Name = row["name"].ToString(), Pass = row["pass"].ToString() });
             }
             return ArduSerial.SerialJoinUsers("users", usersTable);
         }

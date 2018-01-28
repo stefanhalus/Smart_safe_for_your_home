@@ -157,7 +157,8 @@ namespace arduino
         {
             try
             {
-                spArduino.WriteLine("*smsNumber," + Properties.Settings.Default.smartSmsNumber + "|#");
+                var phoneNumberToSync = Properties.Settings.Default.smartSmsNumber;
+                spArduino.WriteLine("*" + phoneNumberToSync + "$");
                 MessageBox.Show(
                     "Success! \nNew number set to Arduino!",
                     "Arduino syncronized",
@@ -180,7 +181,8 @@ namespace arduino
         {
             try
             {
-                spArduino.WriteLine(db.SyncUsers());
+                var usersDataToSync = db.SyncUsers();
+                spArduino.WriteLine(usersDataToSync);
                 MessageBox.Show(
                     "Success! \nUsers were stored to Arduino!",
                     "Arduino syncronized",
