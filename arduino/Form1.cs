@@ -20,7 +20,7 @@ namespace arduino
         {
             //Definim valoarea implicită a stringului de conexiune
             //Dacă nu se poate conecta la placa Aruino, acesta va fi mesajul implicit
-            mStr = " - lipsă conexiune - ";
+            mStr = " - no connection - ";
             //Verificăm conexiunea serială
             try
             {
@@ -84,12 +84,7 @@ namespace arduino
             dgvUsers.DataSource = db.PopulateDGVUsers();
         }
 
-        //Acțiune Meniu Profile -> deschide fereastra de administrare a profilurilor
-        private void setProfilesMain_Click(object sender, EventArgs e)
-		{
-		    Profiles profiles = new Profiles();
-            profiles.ShowDialog();
-		}
+        
         
         //Definire cap de rând pentru DataGridView
         private void dgvUsers_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -200,27 +195,6 @@ namespace arduino
             }
         }
 
-        private void syncProfilesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                spArduino.WriteLine(db.SyncProfiles());
-                MessageBox.Show(
-                    "Success! \nProfiles were stored to Arduino!",
-                    "Arduino syncronized",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
-                    );
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    "Failed! Syncronization error! \nReason: " + ex.Message,
-                    "Arduino not syncronized",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                    );
-            }
-        }
+        
     }
 }

@@ -62,48 +62,7 @@ namespace arduino
             }
         }
 
-        public void InsertProfiles(List<DataProfile> list)
-        {
-            if (list[0].Name.Length > 1)
-            {
-                // Folosim siruri prelucrate pentru a preveni erori și pentru securitatea codului SQL
-                try
-                {
-                    OpenConnection();
-                    MySqlCommand command;
-                    // Nu încadrăm @id în apostrof!
-                    command = new MySqlCommand("INSERT INTO profiles(name, delay, start, end) VALUES(@tname, @tdelay, @tstart, @tend);", connection);
-                    // Atribui la @id valoarea ID care va fi înlocuită '<nr>'
-                    command.Parameters.AddWithValue("@tname", list[0].Name);
-                    command.Parameters.AddWithValue("@tdelay", list[0].Delay);
-                    command.Parameters.AddWithValue("@tstart", list[0].HourStart);
-                    command.Parameters.AddWithValue("@tend", list[0].HourEnd);
-                    if (command.ExecuteNonQuery() == 1)
-                    {
-                        MessageBox.Show("Done!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Not Executed!");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    CloseConnection();
-                }
-            } /// endif ID != 0
-            else
-                MessageBox.Show(
-                    "Numele profilului trebuie să aibă cel puțin 2 caractere!", 
-                    "Nume prea scurt", 
-                    MessageBoxButtons.OK, 
-                    MessageBoxIcon.Warning
-                    );
-        }
+        
 
         public void InsertUsers(List<DataUser> list)
         {
@@ -152,50 +111,7 @@ namespace arduino
             }
         }
 
-        public void UpdateProfiles(List<DataProfile> list)
-        {
-            int id = list[0].Id;
-            if (id > 0)
-            {
-                // Folosim siruri prelucrate pentru a preveni erori și pentru securitatea codului SQL
-                try
-                {
-                    OpenConnection();
-                    MySqlCommand command;
-                    // Nu încadrăm @id în apostrof!
-                    command = new MySqlCommand("UPDATE profiles SET name = @tname , delay = @tdelay , start = @tstart , end = @tend WHERE id = @id ;", connection);
-                    // Atribui la @id valoarea ID care va fi înlocuită '<nr>'
-                    command.Parameters.AddWithValue("@id", id);
-                    command.Parameters.AddWithValue("@tname", list[0].Name);
-                    command.Parameters.AddWithValue("@tdelay", list[0].Delay);
-                    command.Parameters.AddWithValue("@tstart", list[0].HourStart);
-                    command.Parameters.AddWithValue("@tend", list[0].HourEnd);
-                    if (command.ExecuteNonQuery() == 1)
-                    {
-                        MessageBox.Show("Done!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Not Executed!");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    CloseConnection();
-                }
-            } /// endif ID != 0
-            else
-                MessageBox.Show(
-                    "Câmpurile sunt goale! \nSelectați un rând dând click pe coloana dinaintea cifrei!", 
-                    "Nu ați selectat vreun rând", 
-                    MessageBoxButtons.OK, 
-                    MessageBoxIcon.Warning
-                    );
-        }
+        
 
         public void UpdateUsers(List<DataUser> list)
         {
@@ -320,20 +236,7 @@ namespace arduino
                     );
         }
 
-        public String SyncProfiles()
-        {
-            string selectQuery = "select * from profiles";
-            DataProfile dataUser = new DataProfile();
-            DataTable table = new DataTable();
-            MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, connection);
-            adapter.Fill(table);
-            List<DataProfile> profilesTable = new List<DataProfile>();
-            foreach (DataRow row in table.Rows)
-            {
-                profilesTable.Add(new DataProfile() { Id = Convert.ToInt16(row["id"]), Name = row["name"].ToString(), Delay = Convert.ToInt16(row["delay"]), HourStart = row["start"].ToString(), HourEnd = row["end"].ToString() });
-            }
-            return ArduSerial.SerialJoinProfiles("profiles", profilesTable);
-        }
+        
 
         public String SyncUsers()
         {

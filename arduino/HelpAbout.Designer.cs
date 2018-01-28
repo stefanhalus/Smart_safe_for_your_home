@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HelpAbout));
             this.lblProjectName = new System.Windows.Forms.Label();
             this.tlpDespre = new System.Windows.Forms.TableLayoutPanel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lblContact = new System.Windows.Forms.Label();
             this.lblLastUpdated = new System.Windows.Forms.Label();
             this.lblAuthor = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -52,7 +50,7 @@
             this.lblProjectName.AutoSize = true;
             this.lblProjectName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblProjectName.ForeColor = System.Drawing.Color.Aqua;
-            this.lblProjectName.Location = new System.Drawing.Point(13, 155);
+            this.lblProjectName.Location = new System.Drawing.Point(32, 135);
             this.lblProjectName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProjectName.Name = "lblProjectName";
             this.lblProjectName.Size = new System.Drawing.Size(403, 37);
@@ -61,14 +59,13 @@
             // 
             // tlpDespre
             // 
-            this.tlpDespre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tlpDespre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpDespre.AutoSize = true;
             this.tlpDespre.ColumnCount = 2;
             this.tlpDespre.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpDespre.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpDespre.Controls.Add(this.label8, 0, 3);
-            this.tlpDespre.Controls.Add(this.lblContact, 0, 3);
             this.tlpDespre.Controls.Add(this.lblLastUpdated, 1, 2);
             this.tlpDespre.Controls.Add(this.lblAuthor, 1, 1);
             this.tlpDespre.Controls.Add(this.label4, 0, 1);
@@ -76,48 +73,25 @@
             this.tlpDespre.Controls.Add(this.label1, 0, 0);
             this.tlpDespre.Controls.Add(this.label2, 0, 2);
             this.tlpDespre.ForeColor = System.Drawing.Color.Aqua;
-            this.tlpDespre.Location = new System.Drawing.Point(30, 217);
+            this.tlpDespre.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
+            this.tlpDespre.Location = new System.Drawing.Point(13, 165);
             this.tlpDespre.Margin = new System.Windows.Forms.Padding(4);
             this.tlpDespre.Name = "tlpDespre";
-            this.tlpDespre.RowCount = 4;
-            this.tlpDespre.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpDespre.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpDespre.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpDespre.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tlpDespre.Size = new System.Drawing.Size(370, 139);
+            this.tlpDespre.RowCount = 3;
+            this.tlpDespre.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.68687F));
+            this.tlpDespre.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62.62626F));
+            this.tlpDespre.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.68687F));
+            this.tlpDespre.Size = new System.Drawing.Size(422, 203);
             this.tlpDespre.TabIndex = 18;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Location = new System.Drawing.Point(4, 102);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(177, 37);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Contact";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblContact
-            // 
-            this.lblContact.AutoSize = true;
-            this.lblContact.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblContact.Location = new System.Drawing.Point(189, 102);
-            this.lblContact.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblContact.Name = "lblContact";
-            this.lblContact.Size = new System.Drawing.Size(177, 37);
-            this.lblContact.TabIndex = 6;
-            this.lblContact.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblLastUpdated
             // 
             this.lblLastUpdated.AutoSize = true;
             this.lblLastUpdated.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblLastUpdated.Location = new System.Drawing.Point(189, 68);
+            this.lblLastUpdated.Location = new System.Drawing.Point(215, 164);
             this.lblLastUpdated.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLastUpdated.Name = "lblLastUpdated";
-            this.lblLastUpdated.Size = new System.Drawing.Size(177, 34);
+            this.lblLastUpdated.Size = new System.Drawing.Size(203, 39);
             this.lblLastUpdated.TabIndex = 5;
             this.lblLastUpdated.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -125,10 +99,10 @@
             // 
             this.lblAuthor.AutoSize = true;
             this.lblAuthor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblAuthor.Location = new System.Drawing.Point(189, 34);
+            this.lblAuthor.Location = new System.Drawing.Point(215, 37);
             this.lblAuthor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAuthor.Name = "lblAuthor";
-            this.lblAuthor.Size = new System.Drawing.Size(177, 34);
+            this.lblAuthor.Size = new System.Drawing.Size(203, 127);
             this.lblAuthor.TabIndex = 4;
             this.lblAuthor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -136,10 +110,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Location = new System.Drawing.Point(4, 34);
+            this.label4.Location = new System.Drawing.Point(4, 37);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(177, 34);
+            this.label4.Size = new System.Drawing.Size(203, 127);
             this.label4.TabIndex = 3;
             this.label4.Text = "Autor";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -148,10 +122,10 @@
             // 
             this.lblVersion.AutoSize = true;
             this.lblVersion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblVersion.Location = new System.Drawing.Point(189, 0);
+            this.lblVersion.Location = new System.Drawing.Point(215, 0);
             this.lblVersion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(177, 34);
+            this.lblVersion.Size = new System.Drawing.Size(203, 37);
             this.lblVersion.TabIndex = 2;
             this.lblVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -162,7 +136,7 @@
             this.label1.Location = new System.Drawing.Point(4, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 34);
+            this.label1.Size = new System.Drawing.Size(203, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Versiune";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -171,10 +145,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(4, 68);
+            this.label2.Location = new System.Drawing.Point(4, 164);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(177, 34);
+            this.label2.Size = new System.Drawing.Size(203, 39);
             this.label2.TabIndex = 1;
             this.label2.Text = "Last updated";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -184,9 +158,9 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::arduino.Properties.Resources.SmartSafeForYourHome;
-            this.pictureBox1.Location = new System.Drawing.Point(78, -4);
+            this.pictureBox1.Location = new System.Drawing.Point(80, -4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(274, 141);
+            this.pictureBox1.Size = new System.Drawing.Size(266, 136);
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
@@ -194,9 +168,9 @@
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.Location = new System.Drawing.Point(142, 383);
+            this.btnClose.Location = new System.Drawing.Point(149, 375);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(134, 35);
+            this.btnClose.Size = new System.Drawing.Size(149, 35);
             this.btnClose.TabIndex = 20;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -208,7 +182,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.SlateGray;
-            this.ClientSize = new System.Drawing.Size(428, 419);
+            this.ClientSize = new System.Drawing.Size(443, 416);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tlpDespre);
@@ -233,8 +207,6 @@
         #endregion
         private System.Windows.Forms.Label lblProjectName;
         private System.Windows.Forms.TableLayoutPanel tlpDespre;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label lblContact;
         private System.Windows.Forms.Label lblLastUpdated;
         private System.Windows.Forms.Label lblAuthor;
         private System.Windows.Forms.Label label4;

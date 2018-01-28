@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace arduino
@@ -15,10 +8,17 @@ namespace arduino
         public HelpAbout()
         {
             InitializeComponent();
-            lblVersion.Text = "1.0";
-            lblAuthor.Text = "Team 3 Altran";
-            lblLastUpdated.Text = "24.01.2018";
-            lblContact.Text = "will appear soon...";
+            lblVersion.Text = "1.1";
+            lblAuthor.Text = String.Format(
+                "Team 3 Altran: \n{0} \n{1} \n{2} \n{3} \n{4} \n{5} ",
+                " - Diana Pop-Coman",
+                " - Liviu Seplecan",
+                " - Loredana Toma",
+                " - Silvia Paius",
+                " - Ștefan Halus",
+                " - Timotei Dig"
+                );
+            lblLastUpdated.Text = "28.01.2018";
         }
 
         private void btnClose_Click(object sender, EventArgs e)
