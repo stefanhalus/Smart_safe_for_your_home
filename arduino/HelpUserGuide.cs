@@ -9,7 +9,7 @@ namespace arduino
         public HelpUserGuide()
         {
             InitializeComponent();
-            String curDir = Directory.GetCurrentDirectory(); 
+            String curDir = Directory.GetCurrentDirectory();
             wbInstructiuni.Url = new Uri(String.Format("file:///{0}/UserGuide.html", curDir));
         }
     }
