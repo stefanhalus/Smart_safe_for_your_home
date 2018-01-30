@@ -81,6 +81,12 @@
     <Compile Include="SmsDestination.Designer.cs">
       <DependentUpon>SmsDestination.cs</DependentUpon>
     </Compile>
+    <Compile Include="SyncSerialCOM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SyncSerialCOM.Designer.cs">
+      <DependentUpon>SyncSerialCOM.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="HelpAbout.resx">
       <DependentUpon>HelpAbout.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,6 +108,9 @@
     </Compile>
     <EmbeddedResource Include="SmsDestination.resx">
       <DependentUpon>SmsDestination.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SyncSerialCOM.resx">
+      <DependentUpon>SyncSerialCOM.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

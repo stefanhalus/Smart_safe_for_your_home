@@ -34,5 +34,17 @@ namespace arduino.Properties {
                 this["smartSmsNumber"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string smartComPort {
+            get {
+                return ((string)(this["smartComPort"]));
+            }
+            set {
+                this["smartComPort"] = value;
+            }
+        }
     }
 }

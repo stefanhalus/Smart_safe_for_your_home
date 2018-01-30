@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO.Ports;
 using System.Windows.Forms;
 
 namespace arduino
@@ -15,12 +16,47 @@ namespace arduino
 		{
 			InitializeComponent();
         }
-        
+
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Pornim cronometrul de reîmprospătare al statusului plăcii
+            timer1.Start();
             //Definim valoarea implicită a stringului de conexiune
             //Dacă nu se poate conecta la placa Aruino, acesta va fi mesajul implicit
             mStr = " - no connection - ";
+            //Populăm lista de utilizatori în DataGridVie-ulong inițial
+            dgvUsers.DataSource = db.PopulateDGVUsers();
+            //Încearcă să identifice automat portul COM al plăcii Arduino
+            autoDetectSingleComPort();
+            //Deschide conea serială
+            SerialConnectionOpen();
+        }
+
+        /*
+         * funcție care detectează portul unic și realizează conexiunea la Arduino
+         * Dacă dă eroare, putem folosi meniul Syncronize -> Serial COM port
+         */
+        private void autoDetectSingleComPort()
+        {
+            String[] ports = SerialPort.GetPortNames();
+            if (ports.Length == 1 && !ports[0].Equals(Properties.Settings.Default.smartComPort))
+            {
+                Properties.Settings.Default.smartComPort = ports[0];
+                Properties.Settings.Default.Save();
+                SyncSerialCOM.SerialComPortSelected = ports[0];
+            }
+        }
+
+        /*
+         * Metodă de setare a portului serial și de deschidere a conexiunii seriale.
+         */
+        public void SerialConnectionOpen()
+        {
+            //Definim numele portului serial COM
+            try
+            {
+                spArduino.PortName = Properties.Settings.Default.smartComPort;
+            } catch (Exception exa) { }
             //Verificăm conexiunea serială
             try
             {
@@ -31,18 +67,15 @@ namespace arduino
                 syncSMSNumberToolStripMenuItem.Enabled = false;
                 syncUsersToolStripMenuItem.Enabled = false;
                 MessageBox.Show(
-                    ex.Message.ToString(), 
-                    "Placa Arduino", 
-                    MessageBoxButtons.OK, 
+                    ex.Message.ToString(),
+                    "Placa Arduino",
+                    MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                     );
             }
-            //Pornim cronometrul de reîmprospătare al statusului plăcii
-            timer1.Start();
-            //Populăm lista de utilizatori în DataGridVie-ulong inițial
-            dgvUsers.DataSource = db.PopulateDGVUsers();
+            
         }
-        
+
         /* 
          * Acțiunea butolului insert
          * După salvarea în baza de date se curăță și se repopulează DataGridView-ul
@@ -195,6 +228,10 @@ namespace arduino
             }
         }
 
-        
+        private void syncSelectCOMPort_Click(object sender, EventArgs e)
+        {
+            SyncSerialCOM serialcom = new SyncSerialCOM();
+            serialcom.ShowDialog();
+        }
     }
 }
