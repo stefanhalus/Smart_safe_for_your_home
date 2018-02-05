@@ -7,7 +7,7 @@ namespace arduino
 {
     public partial class Form1 : Form
 	{
-        //DbAdaptor bază de date
+        //DbAdaptor bază de date    
         private DbAdaptor db = new DbAdaptor();
         //Răspunsul serial de la Arduino
         private String mStr;
