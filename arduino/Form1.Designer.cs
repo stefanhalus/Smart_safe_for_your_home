@@ -30,10 +30,10 @@
 		{
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label label2;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.name = new System.Windows.Forms.Label();
             this.phone = new System.Windows.Forms.Label();
@@ -54,6 +54,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.setSMSDestinationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.syncronizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.syncSelectCOMPort = new System.Windows.Forms.ToolStripMenuItem();
             this.syncSMSNumberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.syncUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,7 +64,6 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.spArduino = new System.IO.Ports.SerialPort(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.syncSelectCOMPort = new System.Windows.Forms.ToolStripMenuItem();
             label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -151,10 +151,10 @@
             this.binsert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.binsert.AutoSize = true;
             this.binsert.ForeColor = System.Drawing.Color.Red;
-            this.binsert.Location = new System.Drawing.Point(746, 319);
+            this.binsert.Location = new System.Drawing.Point(745, 320);
             this.binsert.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.binsert.Name = "binsert";
-            this.binsert.Size = new System.Drawing.Size(148, 52);
+            this.binsert.Size = new System.Drawing.Size(150, 55);
             this.binsert.TabIndex = 11;
             this.binsert.Text = "Insert";
             this.binsert.UseVisualStyleBackColor = true;
@@ -165,10 +165,10 @@
             this.bupdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bupdate.AutoSize = true;
             this.bupdate.ForeColor = System.Drawing.Color.Red;
-            this.bupdate.Location = new System.Drawing.Point(746, 379);
+            this.bupdate.Location = new System.Drawing.Point(745, 380);
             this.bupdate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bupdate.Name = "bupdate";
-            this.bupdate.Size = new System.Drawing.Size(148, 52);
+            this.bupdate.Size = new System.Drawing.Size(150, 55);
             this.bupdate.TabIndex = 12;
             this.bupdate.Text = "Update";
             this.bupdate.UseVisualStyleBackColor = true;
@@ -179,10 +179,10 @@
             this.bdel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bdel.AutoSize = true;
             this.bdel.ForeColor = System.Drawing.Color.Red;
-            this.bdel.Location = new System.Drawing.Point(746, 439);
+            this.bdel.Location = new System.Drawing.Point(745, 440);
             this.bdel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bdel.Name = "bdel";
-            this.bdel.Size = new System.Drawing.Size(143, 52);
+            this.bdel.Size = new System.Drawing.Size(150, 55);
             this.bdel.TabIndex = 13;
             this.bdel.Text = "Delete";
             this.bdel.UseVisualStyleBackColor = true;
@@ -220,38 +220,38 @@
             this.dgvUsers.BackgroundColor = System.Drawing.Color.SlateGray;
             this.dgvUsers.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvUsers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.SlateGray;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.SlateGray;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvUsers.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvUsers.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgvUsers.GridColor = System.Drawing.Color.SlateGray;
             this.dgvUsers.Location = new System.Drawing.Point(14, 319);
             this.dgvUsers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.ReadOnly = true;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.MidnightBlue;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvUsers.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.dgvUsers.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.MidnightBlue;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUsers.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.dgvUsers.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvUsers.RowTemplate.Height = 24;
             this.dgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsers.Size = new System.Drawing.Size(714, 327);
@@ -342,6 +342,15 @@
             this.syncronizeToolStripMenuItem.Size = new System.Drawing.Size(108, 29);
             this.syncronizeToolStripMenuItem.Text = "Syncronize";
             // 
+            // syncSelectCOMPort
+            // 
+            this.syncSelectCOMPort.BackColor = System.Drawing.SystemColors.Control;
+            this.syncSelectCOMPort.ForeColor = System.Drawing.Color.Red;
+            this.syncSelectCOMPort.Name = "syncSelectCOMPort";
+            this.syncSelectCOMPort.Size = new System.Drawing.Size(227, 30);
+            this.syncSelectCOMPort.Text = "Select COM port";
+            this.syncSelectCOMPort.Click += new System.EventHandler(this.syncSelectCOMPort_Click);
+            // 
             // syncSMSNumberToolStripMenuItem
             // 
             this.syncSMSNumberToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
@@ -404,15 +413,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // syncSelectCOMPort
-            // 
-            this.syncSelectCOMPort.BackColor = System.Drawing.SystemColors.Control;
-            this.syncSelectCOMPort.ForeColor = System.Drawing.Color.Red;
-            this.syncSelectCOMPort.Name = "syncSelectCOMPort";
-            this.syncSelectCOMPort.Size = new System.Drawing.Size(227, 30);
-            this.syncSelectCOMPort.Text = "Select COM port";
-            this.syncSelectCOMPort.Click += new System.EventHandler(this.syncSelectCOMPort_Click);
             // 
             // Form1
             // 
