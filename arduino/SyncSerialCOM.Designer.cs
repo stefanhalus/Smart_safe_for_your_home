@@ -60,13 +60,12 @@
             // 
             // btnSetPort
             // 
-            this.btnSetPort.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnSetPort.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSetPort.ForeColor = System.Drawing.Color.Black;
             this.btnSetPort.Location = new System.Drawing.Point(344, 33);
             this.btnSetPort.Name = "btnSetPort";
-            this.btnSetPort.Size = new System.Drawing.Size(95, 26);
+            this.btnSetPort.Size = new System.Drawing.Size(100, 45);
             this.btnSetPort.TabIndex = 2;
             this.btnSetPort.Text = "Set port";
             this.btnSetPort.UseVisualStyleBackColor = true;
@@ -74,13 +73,12 @@
             // 
             // btnClose
             // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.ForeColor = System.Drawing.Color.Black;
             this.btnClose.Location = new System.Drawing.Point(199, 80);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(95, 26);
+            this.btnClose.Size = new System.Drawing.Size(100, 45);
             this.btnClose.TabIndex = 3;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -91,7 +89,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SlateGray;
-            this.ClientSize = new System.Drawing.Size(493, 118);
+            this.ClientSize = new System.Drawing.Size(493, 134);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSetPort);
             this.Controls.Add(this.cbSerialComPort);

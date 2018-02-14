@@ -36,6 +36,7 @@ namespace arduino
             }
         }
 
+        // Temporarely leaved here for backword compatibility in other methods not updated to a smooth working mode
         public void executeQuery(String query)
         {
             try
@@ -159,49 +160,10 @@ namespace arduino
             } /// endif ID != 0
         }
 
-        public void DeleteProfiles(int id = 0)
-        {
-            if (id != 0)
-            {
-                // Folosim siruri prelucrate pentru a preveni erori și pentru securitatea codului SQL
-                try
-                {
-                    OpenConnection();
-                    MySqlCommand command;
-                    // Nu încadrăm @id în apostrof!
-                    command = new MySqlCommand("DELETE FROM profiles WHERE id = @id ;", connection);
-                    // Atribui la @id valoarea ID care va fi înlocuită '<nr>'
-                    command.Parameters.AddWithValue("@id", id);
-                    if (command.ExecuteNonQuery() == 1)
-                    {
-                        MessageBox.Show("Done!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Not Executed!");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    CloseConnection();
-                }
-            } /// endif ID != 0
-            else
-                MessageBox.Show(
-                    "Câmpurile sunt goale! \nSelectați un rând dând click pe coloana dinaintea cifrei!", 
-                    "Nu ați selectat vreun rând", 
-                    MessageBoxButtons.OK, 
-                    MessageBoxIcon.Warning
-                    );
-        }
 
         public void DeleteUsers(int id = 0)
         {
-            if(id > 0)
+            if (id > 0)
             {
                 try
                 {
@@ -215,7 +177,7 @@ namespace arduino
                     }
                     else
                     {
-                    Console.Write("Not Executed!");
+                        Console.Write("Not Executed!");
                     }
                 }
                 catch (Exception ex)
@@ -236,7 +198,7 @@ namespace arduino
                     );
         }
 
-        
+
 
         public String SyncUsers()
         {
@@ -256,15 +218,6 @@ namespace arduino
         public DataTable PopulateDGVUsers()
         {
             string selectQuery = "select * from arduino_db ";
-            DataTable table = new DataTable();
-            MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, connection);
-            adapter.Fill(table);
-            return table;
-        }
-
-        public DataTable PopulateDGVProfiles()
-        {
-            string selectQuery = "select * from profiles ";
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(selectQuery, connection);
             adapter.Fill(table);
