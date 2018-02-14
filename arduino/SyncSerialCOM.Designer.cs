@@ -60,8 +60,7 @@
             // 
             // btnSetPort
             // 
-            this.btnSetPort.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSetPort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSetPort.ForeColor = System.Drawing.Color.Black;
             this.btnSetPort.Location = new System.Drawing.Point(344, 33);
             this.btnSetPort.Name = "btnSetPort";
